@@ -1,34 +1,39 @@
 public class Doctor extends Staff{
-    private String Specializare;
-    private String Grad;
+    private String specializare;
+    private String grad;
 
     public Doctor(String nume, String prenume, String telefon, String email, Integer salariu, String specializare, String grad) {
         super(nume, prenume, telefon, email, salariu);
-        Specializare = specializare;
-        Grad = grad;
+        this.specializare = specializare;
+        this.grad = grad;
     }
 
     public String getSpecializare() {
-        return Specializare;
+        return specializare;
     }
 
     public void setSpecializare(String specializare) {
-        Specializare = specializare;
+        this.specializare = specializare;
     }
 
     public String getGrad() {
-        return Grad;
+        return grad;
     }
 
     public void setGrad(String grad) {
-        Grad = grad;
+        this.grad = grad;
     }
 
     @Override
     public String toString() {
         return "Doctor{" +
-                "Specializare='" + Specializare + '\'' +
-                ", Grad='" + Grad + '\'' +
+                "Nume='" + getNume() + '\'' +
+                ", Prenume='" + getPrenume() + '\'' +
+                ", Telefon='" + getTelefon() + '\'' +
+                ", Email='" + getEmail() + '\'' +
+                ", Salariu=" + getSalariu() +
+                ", Specializare='" + specializare + '\'' +
+                ", Grad='" + grad + '\'' +
                 '}';
     }
 }

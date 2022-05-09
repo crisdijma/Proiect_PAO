@@ -2,46 +2,46 @@ public class Eveniment {
 
     //Un eveniment poate fi un cartonas(rosu,galben), un gol marcat, un penalty, un autogol, o schimbare
 
-    private String Event;
-    private Integer Minut;
-    private String Echipa;
+    private String event;
+    private Integer minut;
+    private String echipa;
 
     public Eveniment(String event, Integer minut, String echipa) {
-        Event = event;
-        Minut = minut;
-        Echipa = echipa;
+        this.event = event;
+        this.minut = minut;
+        this.echipa = echipa;
     }
 
     public String getEvent() {
-        return Event;
+        return event;
     }
 
     public void setEvent(String event) {
-        Event = event;
+        this.event = event;
     }
 
     public Integer getMinut() {
-        return Minut;
+        return minut;
     }
 
     public void setMinut(Integer minut) {
-        Minut = minut;
+        this.minut = minut;
     }
 
     public String getEchipa() {
-        return Echipa;
+        return echipa;
     }
 
     public void setEchipa(String echipa) {
-        Echipa = echipa;
+        this.echipa = echipa;
     }
 
     @Override
     public String toString() {
         return "Eveniment{" +
-                "Event='" + Event + '\'' +
-                ", Minut=" + Minut +
-                ", Echipa='" + Echipa + '\'' +
+                "event='" + event + '\'' +
+                ", minut=" + minut +
+                ", echipa='" + echipa + '\'' +
                 '}';
     }
 }

@@ -1,34 +1,34 @@
 public class Bilet {
 
-    private String Sector;
-    private Integer Pret;
+    private String sector;
+    private Integer pret;
 
     public Bilet(String sector, Integer pret) {
-        Sector = sector;
-        Pret = pret;
+        this.sector = sector;
+        this.pret = pret;
     }
 
     public String getSector() {
-        return Sector;
+        return sector;
     }
 
     public void setSector(String sector) {
-        Sector = sector;
+        this.sector = sector;
     }
 
     public Integer getPret() {
-        return Pret;
+        return pret;
     }
 
     public void setPret(Integer pret) {
-        Pret = pret;
+        this.pret = pret;
     }
 
     @Override
     public String toString() {
         return "Bilet{" +
-                "Sector='" + Sector + '\'' +
-                ", Pret=" + Pret +
+                "sector='" + sector + '\'' +
+                ", pret=" + pret +
                 '}';
     }
 }

@@ -77,9 +77,13 @@ public class Main {
         StadionService stadionService= new StadionInMemoryService();
         Stadion stadion1 = new Stadion("Arena Nationala", 55634,"iarba naturala", "Bulevardul Basarabia 37-39, București 022103" );
         Stadion stadion2 = new Stadion("Giulesti", 19100,"iarba naturala", "Calea Giulești 18, București" );
+        Stadion stadion3 = new Stadion("Nicolae Dobrin", 7800,"iarba naturala", "Strada Nicolae Dobrin 23, Pitesti" );
+        Stadion stadion4 = new Stadion("Santiago Bernabeu", 87000,"iarba naturala", "Av. de Concha Espina 1, Madrid" );
 
         stadionService.save(stadion1);
         stadionService.save(stadion2);
+        stadionService.save(stadion3);
+        stadionService.save(stadion4);
 
         System.out.println("Testare interogari din clasa STADION:" + "\n");
 

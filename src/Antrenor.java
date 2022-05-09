@@ -1,57 +1,62 @@
 public class Antrenor extends Staff{
 
-    private String Nationalitate;
-    private String Agent;
-    private String Licenta;
-    private String Pozitie;
+    private String nationalitate;
+    private String agent;
+    private String licenta;
+    private String pozitie;
 
     public Antrenor(String nume, String prenume, String telefon, String email, Integer salariu, String nationalitate, String agent, String licenta, String pozitie) {
         super(nume, prenume, telefon, email, salariu);
-        Nationalitate = nationalitate;
-        Agent = agent;
-        Licenta = licenta;
-        Pozitie = pozitie;
+        this.nationalitate = nationalitate;
+        this.agent = agent;
+        this.licenta = licenta;
+        this.pozitie = pozitie;
     }
 
     public String getNationalitate() {
-        return Nationalitate;
+        return nationalitate;
     }
 
     public void setNationalitate(String nationalitate) {
-        Nationalitate = nationalitate;
+        this.nationalitate = nationalitate;
     }
 
     public String getAgent() {
-        return Agent;
+        return agent;
     }
 
     public void setAgent(String agent) {
-        Agent = agent;
+        this.agent = agent;
     }
 
     public String getLicenta() {
-        return Licenta;
+        return licenta;
     }
 
     public void setLicenta(String licenta) {
-        Licenta = licenta;
+        this.licenta = licenta;
     }
 
     public String getPozitie() {
-        return Pozitie;
+        return pozitie;
     }
 
     public void setPozitie(String pozitie) {
-        Pozitie = pozitie;
+        this.pozitie = pozitie;
     }
 
     @Override
     public String toString() {
         return "Antrenor{" +
-                "Nationalitate='" + Nationalitate + '\'' +
-                ", Agent='" + Agent + '\'' +
-                ", Licenta='" + Licenta + '\'' +
-                ", Pozitie='" + Pozitie + '\'' +
+                "Nume='" + getNume() + '\'' +
+                ", Prenume='" + getPrenume() + '\'' +
+                ", Telefon='" + getTelefon() + '\'' +
+                ", Email='" + getEmail() + '\'' +
+                ", Salariu=" + getSalariu() +
+                ", Nationalitate='" + nationalitate + '\'' +
+                ", Agent=" + agent + '\'' +
+                ", Licenta='" + licenta + '\'' +
+                ", Pozitie='" + pozitie + '\'' +
                 '}';
     }
 }

@@ -1,56 +1,72 @@
-public class Stadion {
+public class Stadion implements Comparable<Stadion>{
 
-    private String Denumire;
-    private Integer Capacitate;
-    private String Tip_Gazon;
-    private String Adresa;
+    private String denumire;
+    private Integer capacitate;
+    private String tip_gazon;
+    private String adresa;
 
-    public Stadion(String denumire, Integer capacitate, String tip_Gazon, String adresa) {
-        Denumire = denumire;
-        Capacitate = capacitate;
-        Tip_Gazon = tip_Gazon;
-        Adresa = adresa;
+    public Stadion(String denumire, Integer capacitate, String tip_gazon, String adresa) {
+        this.denumire = denumire;
+        this.capacitate = capacitate;
+        this.tip_gazon = tip_gazon;
+        this.adresa = adresa;
     }
 
     public String getDenumire() {
-        return Denumire;
+        return denumire;
     }
 
     public void setDenumire(String denumire) {
-        Denumire = denumire;
+        this.denumire = denumire;
     }
 
     public Integer getCapacitate() {
-        return Capacitate;
+        return capacitate;
     }
 
     public void setCapacitate(Integer capacitate) {
-        Capacitate = capacitate;
+        this.capacitate = capacitate;
     }
 
     public String getTip_Gazon() {
-        return Tip_Gazon;
+        return tip_gazon;
     }
 
-    public void setTip_Gazon(String tip_Gazon) {
-        Tip_Gazon = tip_Gazon;
+    public void setTip_Gazon(String tip_gazon) {
+        this.tip_gazon = tip_gazon;
     }
 
     public String getAdresa() {
-        return Adresa;
+        return adresa;
     }
 
     public void setAdresa(String adresa) {
-        Adresa = adresa;
+        this.adresa = adresa;
     }
 
     @Override
     public String toString() {
         return "Stadion{" +
-                "Denumire='" + Denumire + '\'' +
-                ", Capacitate=" + Capacitate +
-                ", Tip_Gazon='" + Tip_Gazon + '\'' +
-                ", Adresa='" + Adresa + '\'' +
+                "denumire='" + denumire + '\'' +
+                ", capacitate=" + capacitate +
+                ", tip_gazon='" + tip_gazon + '\'' +
+                ", adresa='" + adresa + '\'' +
                 '}';
     }
+
+// Rescriere metoda de comparare pentru a putea utiliza tipul de colectie TreeSet in StadionInMemoryService
+// Sortarea intre stadioane se va face in functie de capacitatea acestora
+    @Override
+    public int compareTo(Stadion c) {
+        if (capacitate > c.capacitate) {
+            return 1;
+        }
+        else if (capacitate < c.capacitate) {
+            return -1;
+        }
+        else {
+            return 0;
+        }
+    }
+
 }

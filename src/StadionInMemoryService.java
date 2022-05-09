@@ -5,7 +5,8 @@ import java.util.stream.Collectors;
 
 public class StadionInMemoryService implements StadionService {
 
-    Set<Stadion> statioane= new HashSet<>();
+//  Folosire colectie sortata by default, TREESET
+    Set<Stadion> statioane= new TreeSet<>();
 
     @Override
     public void save(Stadion stadion) {

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -34,7 +35,7 @@ public class BiletInMemoryService implements BiletService{
                 .collect(Collectors.toList());
 
         if(biletSector.size()==0) {
-            return null;
+            return Collections.EMPTY_LIST;
         }
 
         return biletSector;

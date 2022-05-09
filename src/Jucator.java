@@ -2,59 +2,59 @@ import java.util.Collections;
 
 public class Jucator extends Staff{
 
-    private String Nationalitate;
-    private Integer Varsta;
-    private Integer Inaltime;
-    private String Pozitie;
-    private String Picior;
+    private String nationalitate;
+    private Integer varsta;
+    private Integer inaltime;
+    private String pozitie;
+    private String picior;
 
     public Jucator(String nume, String prenume, String telefon, String email, Integer salariu, String nationalitate, Integer varsta, Integer inaltime, String pozitie, String picior) {
         super(nume, prenume, telefon, email, salariu);
-        Nationalitate = nationalitate;
-        Varsta = varsta;
-        Inaltime = inaltime;
-        Pozitie = pozitie;
-        Picior = picior;
+        this.nationalitate = nationalitate;
+        this.varsta = varsta;
+        this.inaltime = inaltime;
+        this.pozitie = pozitie;
+        this.picior = picior;
     }
 
     public String getNationalitate() {
-        return Nationalitate;
+        return nationalitate;
     }
 
     public void setNationalitate(String nationalitate) {
-        Nationalitate = nationalitate;
+        this.nationalitate = nationalitate;
     }
 
     public Integer getVarsta() {
-        return Varsta;
+        return varsta;
     }
 
     public void setVarsta(Integer varsta) {
-        Varsta = varsta;
+        this.varsta = varsta;
     }
 
     public Integer getInaltime() {
-        return Inaltime;
+        return inaltime;
     }
 
     public void setInaltime(Integer inaltime) {
-        Inaltime = inaltime;
+        this.inaltime = inaltime;
     }
 
     public String getPozitie() {
-        return Pozitie;
+        return pozitie;
     }
 
     public void setPozitie(String pozitie) {
-        Pozitie = pozitie;
+        this.pozitie = pozitie;
     }
 
     public String getPicior() {
-        return Picior;
+        return picior;
     }
 
     public void setPicior(String picior) {
-        Picior = picior;
+        this.picior = picior;
     }
 
     public void copiere(Jucator j1){
@@ -71,6 +71,8 @@ public class Jucator extends Staff{
 
     }
 
+
+
     @Override
     public String toString() {
         return "Jucator{" +
@@ -79,11 +81,11 @@ public class Jucator extends Staff{
                 ", Telefon='" + getTelefon() + '\'' +
                 ", Email='" + getEmail() + '\'' +
                 ", Salariu=" + getSalariu() +
-                ", Nationalitate='" + Nationalitate + '\'' +
-                ", Varsta=" + Varsta +
-                ", Inaltime=" + Inaltime +
-                ", Pozitie='" + Pozitie + '\'' +
-                ", Picior='" + Picior + '\'' +
+                ", Nationalitate='" + nationalitate + '\'' +
+                ", Varsta=" + varsta +
+                ", Inaltime=" + inaltime +
+                ", Pozitie='" + pozitie + '\'' +
+                ", Picior='" + picior + '\'' +
                 '}';
     }
 }

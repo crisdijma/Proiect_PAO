@@ -1,66 +1,67 @@
 public class Staff {
 
-    private String Nume;
-    private String Prenume;
-    private String Telefon;
-    private String Email;
-    private Integer Salariu;
+    private String nume;
+    private String prenume;
+    private String telefon;
+    private String email;
+    private Integer salariu;
 
     public Staff(String nume, String prenume, String telefon, String email, Integer salariu) {
-        Nume = nume;
-        Prenume = prenume;
-        Telefon = telefon;
-        Email = email;
-        Salariu = salariu;
+        this.nume = nume;
+        this.prenume = prenume;
+        this.telefon = telefon;
+        this.email = email;
+        this.salariu = salariu;
     }
 
     public String getNume() {
-        return Nume;
+        return nume;
     }
 
     public void setNume(String nume) {
-        Nume = nume;
+        this.nume = nume;
     }
 
     public String getPrenume() {
-        return Prenume;
+        return prenume;
     }
 
     public void setPrenume(String prenume) {
-        Prenume = prenume;
+        this.prenume = prenume;
     }
 
     public String getTelefon() {
-        return Telefon;
+        return telefon;
     }
 
     public void setTelefon(String telefon) {
-        Telefon = telefon;
+        this.telefon = telefon;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
-    public Integer getSalariu(){
-        return Salariu;
+    public Integer getSalariu() {
+        return salariu;
     }
 
-    public void setSalariu(Integer salariu){
-        Salariu = salariu;
+    public void setSalariu(Integer salariu) {
+        this.salariu = salariu;
     }
 
     @Override
     public String toString() {
         return "Staff{" +
-                "Nume='" + Nume + '\'' +
-                ", Prenume='" + Prenume + '\'' +
-                ", Telefon='" + Telefon + '\'' +
-                ", Email='" + Email + '\'' +
+                "nume='" + nume + '\'' +
+                ", prenume='" + prenume + '\'' +
+                ", telefon='" + telefon + '\'' +
+                ", email='" + email + '\'' +
+                ", salariu=" + salariu +
                 '}';
     }
 }
