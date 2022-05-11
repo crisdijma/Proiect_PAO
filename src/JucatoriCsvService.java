@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.*;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -125,6 +126,7 @@ public class JucatoriCsvService implements JucatorService{
                     .map(line -> getJucatorFromCsvLine(line))
                     .collect(Collectors.toList());
 
+            jucatori.sort(Comparator.comparing(Jucator::getNume));
             return jucatori;
         } catch (Exception e) {
 
@@ -153,12 +155,46 @@ public class JucatoriCsvService implements JucatorService{
 
     @Override
     public List<Jucator> findPlayersUnder(int varsta) {
-        return null;
+        try {
+            FileReader fileReader = new FileReader(jucatoriFile);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            List<Jucator> jucatori = bufferedReader.lines()
+                    .map(line -> getJucatorFromCsvLine(line))
+                    .filter(jucator -> jucator.getVarsta() < varsta)
+                    .collect(Collectors.toList());
+
+            if(jucatori.size()==0) {
+                return Collections.emptyList();
+            }
+            return jucatori;
+        } catch (Exception e) {
+
+        }
+
+        return Collections.emptyList();
     }
 
     @Override
     public List<Jucator> findPlayersByFoot(String picior) {
-        return null;
+        try {
+            FileReader fileReader = new FileReader(jucatoriFile);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            List<Jucator> jucatori = bufferedReader.lines()
+                    .map(line -> getJucatorFromCsvLine(line))
+                    .filter(jucator -> jucator.getPicior() == picior || jucator.getPicior() == "Ambele")
+                    .collect(Collectors.toList());
+
+            if(jucatori.size()==0) {
+                return Collections.emptyList();
+            }
+            return jucatori;
+        } catch (Exception e) {
+
+        }
+
+        return Collections.emptyList();
     }
 
     private String formatForCsv(Jucator jucator) {
