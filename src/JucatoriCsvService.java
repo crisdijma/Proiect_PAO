@@ -117,8 +117,39 @@ public class JucatoriCsvService implements JucatorService{
 
     @Override
     public List<Jucator> getAllSorted() {
-        return null;
+        try {
+            FileReader fileReader = new FileReader(jucatoriFile);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            List<Jucator> jucatori = bufferedReader.lines()
+                    .map(line -> getJucatorFromCsvLine(line))
+                    .collect(Collectors.toList());
+
+            return jucatori;
+        } catch (Exception e) {
+
+        }
+
+        return Collections.emptyList();
     }
+
+    private Jucator getJucatorFromCsvLine(String line) {
+        String[] values = line.split(",");
+        Jucator jucator = new Jucator(
+                values[0],
+                values[1],
+                values[2],
+                values[3],
+                Integer.parseInt(values[4]),
+                values[5],
+                Integer.parseInt(values[6]),
+                Integer.parseInt(values[7]),
+                values[8],
+                values[9]);
+
+        return jucator;
+    }
+
 
     @Override
     public List<Jucator> findPlayersUnder(int varsta) {
